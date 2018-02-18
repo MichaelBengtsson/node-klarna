@@ -1,0 +1,24 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Test website",
+  "main": "main.js",
+  "scripts": {
+    "build-css": "stylus source/stylesheets/index.styl -o static/css",
+    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
+    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build": "npm run clean && npm run build-css",
+    "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
+    "start": "node server"
+  },
+  "author": "Michael Bengtsson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jade": "^1.11.0",
+    "klarna-checkout": "^1.3.0",
+    "morgan": "^1.9.0",
+    "request": "^2.83.0",
+    "stylus": "^0.54.5"
+  }
+}
